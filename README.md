@@ -1,6 +1,8 @@
 
 CASDev Library
+
 Ahmed M. Hussein
+
 amhussein4@gmail.com
 
 What is CASDev:
@@ -49,11 +51,14 @@ CASDev source code is distributed over four main directories.
 
 The "src" directory contains the implementation of all the library's 
 functions. All functionality is written in C programming language. 
+
 The "include" directory contains the header files to be included when 
 linking against the library. 
+
 The "tests" directory has a number of test programs that test the accuracy 
 and performance of the different library components. All test code is 
 written in C++ programming language. 
+
 The "pymodules" directory has python modules that can be used to interface 
 programs written in python to the library components. 
 
