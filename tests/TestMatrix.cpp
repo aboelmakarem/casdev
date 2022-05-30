@@ -139,7 +139,7 @@ int main(int argc,char** argv)
 	if(argc < 3)
 	{
 		printf("error: missing run arguments\n");
-		printf("usage:testblas test_size test_count\n");
+		printf("usage:testmatrix test_size test_count\n");
 		return 1;
 	}
 	unsigned int eq_count = atoi(argv[1]);
