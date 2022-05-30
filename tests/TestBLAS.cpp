@@ -1,6 +1,6 @@
-/*	Random.h
+/*	TestBLAS.cpp
 	Ahmed M. Hussein (amhussein4@gmail.com)
-	04/30/2022
+	05/01/2022
 
 Copyright (c) 2013 Ahmed M. Hussein (amhussein4@gmail.com)
 
@@ -23,20 +23,28 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#ifndef RANDOM_H_
-#define RANDOM_H_
 
-// random number generation library functions
+#include "stdio.h"
+#include "stdlib.h"
 
-double rand_uniform();
-double rand_uniform_interval(double min,double max);
-int rand_int(int min,int max);
-int rand_sign();
-double rand_std_normal();
-double rand_normal(double mean,double standard_deviation);
-double rand_exponential(double mean);
-void rand_shuffle(unsigned int size,unsigned int* shuffled_array,unsigned int passes);
-void rand_seed(unsigned int seed);
+extern "C"
+{
+	#include "BLAS.h"
+}
 
-#endif
+int main(int argc,char** argv)
+{
+	if(argc < 3)
+	{
+		printf("error: missing run arguments\n");
+		printf("usage:testblas test_size test_count\n");
+		return 1;
+	}
+	unsigned int test_size = atoi(argv[1]);
+	unsigned int test_count = atoi(argv[2]);
+	printf("running %u BLAS tests of size %u\n",test_count,test_size);
+	if(test_BLAS(test_size,test_count,1.0e-8,1))		printf("All BLAS tests passed\n");
+	else 												printf("Some or all BLAS tests failed\n");
+	return 0;
+}
 
