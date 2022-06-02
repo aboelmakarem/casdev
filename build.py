@@ -3,7 +3,7 @@ import os
 import os.path
 import sys
 
-sources = ["Random.c","BLAS.c","Matrix.c","Regression.c","Image.c"]
+sources = ["Random.c","BLAS.c","Matrix.c","Regression.c","Image.c","Complex.c"]
 
 compiler = "gcc"
 include_dirs = ["include","exclude"]
